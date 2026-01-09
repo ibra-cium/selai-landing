@@ -29,7 +29,8 @@
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-slate-50 text-gray-800 font-sans flex items-center justify-center min-h-screen p-4 md:p-8 relative overflow-hidden">
+<!-- UPDATED BODY: Removed 'overflow-hidden' (jailbreak!) and added 'items-start md:items-center' so mobile content doesn't get decapitated at the top -->
+<body class="bg-slate-50 text-gray-800 font-sans flex items-start md:items-center justify-center min-h-screen p-4 md:p-8 relative overflow-x-hidden">
 
     <!-- Background Blobs (Abstract Art) -->
     <div class="absolute top-0 left-0 w-64 h-64 bg-[#2C5F6D] opacity-5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
@@ -57,6 +58,26 @@
         <!-- Main Content -->
         <main class="flex-1 px-6 pb-8 space-y-8">
             
+            <!-- LIMITED OFFER BANNER (New Addition) -->
+            <div class="relative bg-amber-50 border border-amber-200 rounded-2xl p-4 text-center transform transition-transform duration-300 hover:scale-[1.02] shadow-sm overflow-hidden group">
+                <!-- Decorative blurred glows -->
+                <div class="absolute -top-4 -right-4 w-16 h-16 bg-amber-300 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-orange-300 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-1.5 mb-1">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-600 animate-pulse"></i>
+                        <h2 class="font-bengali font-bold text-xl text-amber-900 leading-tight">১৫০ টাকা বাঁচান!</h2>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-600 animate-pulse"></i>
+                    </div>
+                    <div class="inline-block bg-white/60 backdrop-blur-sm border border-amber-200/50 rounded-full px-3 py-0.5 mt-1">
+                        <p class="font-bengali text-sm font-semibold text-amber-700">
+                            পিক-আপ + ডেলিভারি একদম ফ্রি
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- How It Works - Icon Grid -->
             <div class="grid grid-cols-3 gap-2">
                 <!-- Step 1 -->
@@ -91,10 +112,8 @@
                         <i data-lucide="check-circle-2" class="w-[18px] h-[18px]"></i>
                     </div>
                     <p class="font-bengali text-sm text-gray-700 leading-relaxed">
-
-                    অনলাইনে অর্ডার করলেই আমরা আপনার বাসা থেকে <strong>কাপড় আর মাপের জন্য একটি জামা</strong> নিয়ে আসব। সেলাই শেষে তৈরি জামা আবার আপনার বাসায় পৌঁছে দেব।
-
-                </p>
+                        অনলাইনে অর্ডার করলেই আমরা আপনার বাসা থেকে <strong>কাপড় আর মাপের জন্য একটি জামা</strong> নিয়ে আসব। সেলাই শেষে তৈরি জামা আবার আপনার বাসায় পৌঁছে দেব।
+                    </p>
                 </div>
             </div>
 
@@ -112,7 +131,7 @@
                 <!-- Messenger -->
                 <a href="https://www.facebook.com/profile.php?id=61584702742201" target="_blank" class="w-full bg-blue-50 hover:bg-blue-100 text-[#0084FF] border border-blue-200 p-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3 no-underline">
                     <i data-lucide="facebook" class="w-6 h-6"></i>
-                    <span class="font-english font-semibold">Messenger</span>
+                    <span class="font-english font-semibold">Facebook</span>
                 </a>
 
                 <!-- Telegram -->
@@ -128,7 +147,7 @@
         <footer class="bg-slate-50 p-6 text-center border-t border-slate-100 mt-auto">
             <div class="flex flex-col items-center gap-2">
                 <div class="w-[150px] h-1 bg-gray-200 rounded-full mb-4"></div>
-                <p className="font-english text-[10px] text-gray-300 mt-2">© 2024 Selai Tailors. Dhaka, BD.</p>
+                <p class="font-english text-[10px] text-gray-300 mt-2">© 2024 Selai Tailors. Dhaka, BD.</p>
             </div>
         </footer>
 
